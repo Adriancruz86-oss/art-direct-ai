@@ -1,7 +1,7 @@
 # ART DIRECTING AI
 ## A practical guide to children's-book illustration with generative AI
 
-**Working product manuscript — v0.1**
+**Working product manuscript — v0.2**
 
 > AI should give you material to work with — not permission to stop working.
 
@@ -319,7 +319,7 @@ Do not rewrite everything when only one layer is broken.
 
 ### A working prompt architecture
 
-The full paid edition will use a structured prompt template throughout the examples. Its logic is simple:
+Throughout this guide, we will use a structured prompt architecture:
 
 **SCENE** — what is happening.
 
@@ -337,51 +337,430 @@ The value of this structure is not that the headings themselves are magical. The
 
 ## Chapter 5 — Character consistency starts before page one
 
-[Draft next]
+Most creators discover the character-consistency problem too late.
 
-Topics to cover:
-- lock silhouette before facial detail;
-- height relationships;
-- hair as shape rather than individual strands;
-- wardrobe rules;
-- reference poses;
-- expression range;
-- immutable details versus flexible details;
-- when to reuse references and when doing so causes stiffness.
+They generate a beautiful first page, then ask for the same child again on page two. The hair changes. The eyes change. The face gets older. The shirt gains a collar. The shoes disappear. The child's body proportions shift. By page six, the book contains six close relatives instead of one character.
+
+The mistake happened before page one.
+
+The first finished illustration should not be the place where you discover who the character is.
+
+### Lock the silhouette first
+
+A character is often recognized from farther away than you think.
+
+Before worrying about eye color or freckles, look at:
+
+- head-to-body proportion;
+- hair silhouette;
+- height;
+- shoulder width;
+- leg length;
+- posture;
+- clothing silhouette;
+- one or two memorable shapes.
+
+If the silhouette changes dramatically, tiny matching details will not save continuity.
+
+For a young child, decide whether the design uses a larger head and shorter limbs. For an older child, decide whether the proportions are more naturalistic. Decide whether the hair creates a round, triangular, wide, narrow, curly, or straight outer shape.
+
+The goal is not anatomical precision. The goal is repeatability.
+
+### Divide details into three groups
+
+Create a character sheet with three categories.
+
+**IMMUTABLE**
+
+These should almost never change:
+
+- approximate age;
+- skin tone;
+- hair color and primary silhouette;
+- eye treatment;
+- body proportion;
+- signature glasses, birthmark, hearing aid, or other identity-defining feature;
+- relative height compared with recurring characters.
+
+**SCENE-DEPENDENT**
+
+These can change because the story requires it:
+
+- pose;
+- expression;
+- direction of gaze;
+- outerwear;
+- props held in the hand;
+- lighting response.
+
+**FLEXIBLE**
+
+These may vary slightly without hurting identity:
+
+- exact placement of a loose hair strand;
+- tiny folds in clothing;
+- hand position within a similar pose;
+- minor asymmetry in pencil marks.
+
+This distinction prevents two opposite problems: uncontrolled drift and over-constrained stiffness.
+
+### Hair is a shape before it is hair
+
+For consistency work, do not define hair primarily as thousands of strands.
+
+Define the large masses.
+
+Instead of:
+
+> shoulder-length brown hair with detailed individual strands
+
+Try thinking:
+
+> dark brown bob forming one rounded outer mass, ending at the jaw, with a simple side fringe; internal strand detail kept minimal
+
+The second description protects the silhouette.
+
+It also prevents the model from spending half the image rendering hair texture that no traditional illustrator would bother drawing on every page.
+
+### Wardrobe needs rules, too
+
+A recurring outfit should be simple enough to reproduce.
+
+If the child wears a yellow dress, decide:
+
+- sleeve length;
+- neckline shape;
+- hem length;
+- whether there is a waist seam;
+- whether the fabric is plain;
+- shoes and socks;
+- any story-relevant accessory.
+
+Then stop.
+
+Do not let the outfit turn into a fashion-design exercise unless the story is about the outfit.
+
+A good continuity note might say:
+
+> Plain mustard-yellow knee-length dress, short sleeves, simple round neck, no printed pattern, no embroidery, no lace, no decorative trim.
+
+That sentence is boring in exactly the right way.
+
+### Reference poses should teach the model the character, not trap it
+
+Build references that show identity from several useful views:
+
+- front;
+- three-quarter;
+- side;
+- neutral standing pose;
+- seated pose if the story uses one frequently;
+- a small expression range.
+
+You are not trying to create every pose the character will ever perform.
+
+You are teaching the stable design from enough angles that later scenes have somewhere to begin.
+
+Too many creators make one perfect front-facing portrait and then wonder why the character collapses when asked to run, bend, climb, or turn away.
+
+### Expression has a ceiling
+
+Decide how expressive this book is allowed to become.
+
+Some books use broad cartoon acting. Others use tiny eyebrow shifts and head tilts.
+
+If your character design is quiet and handmade, an enormous open-mouth reaction with sparkling eyes may break the style even if the face is technically “consistent.”
+
+Consistency includes emotional rendering.
+
+### The page-one test
+
+Before you begin the book, you should be able to answer these without improvising:
+
+1. What does this character look like from across the room?
+2. What five features cannot change?
+3. What is the simplest version of the outfit?
+4. How much facial detail belongs in this book?
+5. What does the character look like from the side?
+6. What expression would be too exaggerated for this visual language?
+
+If you cannot answer those yet, you are not ready for page one.
 
 ---
 
 ## Chapter 6 — Control the page, not just the character
 
-[Draft next]
+A generated illustration can be gorgeous and still be unusable as a book page.
 
-Topics to cover:
-- page-design thinking;
-- text-safe space;
-- full bleed versus spot art;
-- quiet pages;
-- page-turn reveals;
-- focal hierarchy;
-- scale variation;
-- why every spread should not be a cinematic poster.
+The most common reason is simple: it was generated as a picture, not designed as a page.
+
+Children's books need room for words, pacing, page turns, quiet moments, visual contrast, and rhythm across a sequence.
+
+A beautiful image that ignores those needs is decoration, not page design.
+
+### Decide where the text lives before you generate
+
+If the manuscript belongs in the upper-left corner, tell the composition to protect the upper-left corner.
+
+Do not ask the model to “leave some room for text.”
+
+That is vague.
+
+Use spatial language:
+
+> Keep the upper-left third mostly open paper with only a very light wash. Place the character low and to the right. No important objects behind the text area.
+
+You are not merely creating blank space. You are assigning hierarchy.
+
+### Negative space is not missing content
+
+Models tend to treat empty areas as unfinished problems.
+
+Illustrators know better.
+
+Negative space can:
+
+- make text readable;
+- make a small character feel lonely;
+- make a large object feel enormous;
+- create calm after a busy spread;
+- direct the eye;
+- make a page feel handmade rather than filled by an algorithm determined to decorate every inch.
+
+If the model repeatedly fills your quiet space with trees, clouds, stars, flowers, furniture, texture, or floating particles, strengthen the instruction.
+
+> Preserve visible paper. Do not fill the open area with decorative objects or texture.
+
+### Full bleed is not automatically better
+
+A full-bleed spread can feel cinematic and immersive.
+
+That does not mean every page should be full bleed.
+
+Spot illustrations and partial-page compositions can create rhythm. A small drawing floating on paper can be funnier, gentler, or more intimate than a fully rendered environment.
+
+If every spread is a giant polished scene, nothing feels giant anymore.
+
+### Save close-ups for when they matter
+
+AI image generators love character portraits because portraits are visually legible and rewarding.
+
+Books need more variety.
+
+Use:
+
+- wide establishing views;
+- medium action views;
+- small spot illustrations;
+- object-focused moments;
+- close-ups;
+- occasional near-empty pages.
+
+Do not let every page become a waist-up character looking toward the viewer.
+
+A close-up has power because it is different from what came before it.
+
+### Think in sequences of three
+
+When planning pages, look at the page before, the current page, and the page after.
+
+Ask:
+
+- Are all three compositions the same distance from the character?
+- Are all three equally busy?
+- Is the character always in the center?
+- Does the value pattern repeat?
+- Does the next page need to feel bigger or quieter?
+
+A book is not judged only one image at a time.
+
+### Design the page turn
+
+A reveal after a page turn can be more powerful than showing everything early.
+
+If the manuscript says a child hears something enormous outside, you might keep the first page small and restrained: child, window, quiet room.
+
+Turn the page.
+
+Then show the enormous object.
+
+The generator does not know your pacing unless you direct the sequence.
+
+### The poster test
+
+If every page looks like it could be used as a movie poster, the book probably has too much visual intensity.
+
+Ask:
+
+**Does this image serve this page, or is it trying to become the most impressive image in the book?**
+
+Not every page gets to be the cover.
 
 ---
 
 ## Chapter 7 — Diagnose before you regenerate
 
-[Draft next]
+A weak result often triggers the worst possible response:
 
-Planned diagnostic categories:
-- scene wrong;
-- identity drift;
-- medium drift;
-- detail overflow;
-- beautification;
-- composition failure;
-- invented props;
-- emotional overstatement;
-- anatomy/artifact issue;
-- page-level mismatch.
+> Try again.
+
+Again with what changed?
+
+If you cannot name the failure, regeneration becomes slot-machine behavior. You pull the lever until something looks good enough.
+
+A professional workflow diagnoses first.
+
+### 1. Scene failure
+
+The model misunderstood the physical action.
+
+Examples:
+
+- the child is standing instead of kneeling;
+- two characters are looking at the wrong object;
+- the balloon is tied to the wrong hand;
+- the door is open when the story requires it closed.
+
+Fix the scene instruction. Do not rewrite your medium and style language.
+
+### 2. Identity drift
+
+The scene is correct, but the character no longer looks like the established character.
+
+Look at:
+
+- face proportion;
+- age;
+- hair silhouette;
+- skin tone;
+- height relationship;
+- wardrobe;
+- recurring accessories.
+
+Strengthen continuity and reference usage.
+
+### 3. Medium drift
+
+The character is right, but the page suddenly looks like a different illustrator made it.
+
+Common signs:
+
+- paper texture disappears;
+- pencil becomes smooth digital linework;
+- watercolor becomes airbrushed shading;
+- gouache becomes 3D rendering;
+- edges become too clean.
+
+Repair the rendering behavior, not the scene.
+
+### 4. Detail overflow
+
+The image has the correct subject and medium but too much visual information.
+
+Typical symptoms:
+
+- leaves individually rendered;
+- hair overworked;
+- fabric patterns invented;
+- brick walls rendered brick by brick;
+- every shelf object clearly visible;
+- tiny decorative props added everywhere.
+
+Lower the detail ceiling.
+
+### 5. Beautification
+
+The model made something prettier than the story needs.
+
+This happens constantly.
+
+A plain bedroom gains string lights and decorative pillows.
+
+A muddy backyard gains perfect wildflowers.
+
+An old coat gains embroidered trim.
+
+A flashlight becomes a glowing magical artifact.
+
+Add explicit ordinariness when necessary.
+
+> Functional, plain, inexpensive object. No decorative embellishment.
+
+### 6. Composition failure
+
+Everything may look good, but the page cannot carry text or the focal point is weak.
+
+Symptoms:
+
+- subject centered when asymmetry is needed;
+- important object hidden near the gutter;
+- no text-safe region;
+- multiple equally strong focal points;
+- camera too close or too far.
+
+Fix only the composition layer.
+
+### 7. Invented props
+
+Models often fill ambiguity with plausible objects.
+
+If the story says “kitchen,” the model may invent:
+
+- hanging pans;
+- plants;
+- patterned towels;
+- fruit bowls;
+- signs;
+- shelves;
+- decorative jars.
+
+Some may be harmless. Others become continuity problems three pages later.
+
+Every invented recurring object creates another thing you may need to remember.
+
+### 8. Emotional overstatement
+
+The manuscript says nervous.
+
+The image says terrified.
+
+The manuscript says curious.
+
+The image says ecstatic.
+
+The manuscript says sad.
+
+The image says theatrical devastation.
+
+Generated faces often overperform because strong emotion reads clearly.
+
+Direct emotional intensity like any other design variable.
+
+### 9. Anatomy or artifact failure
+
+Extra fingers, merged objects, impossible joints, broken perspective, unreadable background symbols, accidental duplicates.
+
+These are not art-direction failures. They are production defects.
+
+If the rest of the image works, edit the defect instead of sacrificing the entire generation.
+
+### 10. Page-level mismatch
+
+Sometimes nothing is technically wrong with the image.
+
+It simply does not belong beside the other pages.
+
+That is enough reason to reject it.
+
+### The one-sentence diagnosis rule
+
+Before regenerating, force yourself to complete this sentence:
+
+> The image fails because __________.
+
+If your answer is only “I don't like it,” you are not ready to regenerate.
+
+Name the failure first.
 
 ---
 
@@ -389,15 +768,242 @@ Planned diagnostic categories:
 
 ## Chapter 8 — The polished face problem
 
-[Draft next]
+Faces carry enormous visual weight.
+
+That is why a face can make an otherwise restrained illustration suddenly feel synthetic.
+
+The usual problem is not that the face is inaccurate.
+
+It is that the face has been rendered with a level of finish that the rest of the book never asked for.
+
+### Common fingerprints
+
+Watch for:
+
+- perfectly smooth skin;
+- tiny gradient transitions across cheeks and nose;
+- glossy catchlights in both eyes;
+- highly symmetrical features;
+- individually rendered eyelashes;
+- soft cosmetic-looking blush;
+- bright lip highlights;
+- cinematic light wrapping around the face;
+- detailed teeth inside a wide smile;
+- a polished “character design” finish while the rest of the page is supposed to feel loose.
+
+Children's-book faces often work because they are economical.
+
+Two eyes, a nose suggestion, a mouth, one eyebrow angle, and the tilt of the head may be enough.
+
+### Describe the amount of face
+
+Instead of only describing the character, describe how much facial rendering is allowed.
+
+For example:
+
+> Facial features indicated with very few pencil marks. Simple eyes without glossy highlights. Skin mostly flat with only a faint wash. No individual eyelashes. No rendered lips. Keep asymmetry and hand-drawn irregularity.
+
+You are directing restraint, not ugliness.
+
+### Beware the “cute” multiplier
+
+Words like *cute*, *adorable*, *beautiful*, and *charming* can push a model toward familiar signals:
+
+- bigger eyes;
+- rounder cheeks;
+- smaller noses;
+- shinier surfaces;
+- sweeter smiles;
+- cleaner symmetry.
+
+That may be what you want.
+
+But if the result starts looking like a mascot rather than the child in your book, remove the adjective and describe the actual design.
+
+### The thumbnail test
+
+Shrink the image until the face is small.
+
+Does the expression still read?
+
+If yes, you probably do not need all the micro-detail that appears at full size.
+
+A children's-book reader often sees the page at a modest physical size. Detail that only rewards 300-percent zoom may be wasted labor — and a major AI tell.
+
+---
 
 ## Chapter 9 — The hair problem
 
-[Draft next]
+Hair is one of the easiest places for a generative model to show off.
+
+It can produce hundreds of strands, soft highlights, flyaways, translucent edges, curls inside curls, reflected color, rim lighting, and perfect volume.
+
+That is precisely why hair so often breaks an otherwise restrained children's-book style.
+
+### Human illustrators usually simplify hair aggressively
+
+Look at hair first as:
+
+- silhouette;
+- direction;
+- one or two large value masses;
+- a few accent strokes.
+
+The viewer already knows it is hair.
+
+You do not need to prove it strand by strand.
+
+### A useful hierarchy
+
+Think of hair rendering in four levels.
+
+**Level 1 — Shape only**
+
+One flat or lightly washed mass with outer contour.
+
+**Level 2 — Shape plus direction**
+
+Large mass plus a few strokes showing flow or parting.
+
+**Level 3 — Selective texture**
+
+A handful of curls or strands where they help the design.
+
+**Level 4 — Full rendering**
+
+Many visible strands, highlights, texture changes, flyaways, and dimensional shading.
+
+For the loose children's-book look taught in this guide, most pages should live around Levels 1–2, occasionally 3.
+
+If every page sits at Level 4, the hair may become the most expensive-looking object in every scene.
+
+### Curly hair does not require drawing every curl
+
+This is important.
+
+Simplifying textured or curly hair does not mean erasing its character.
+
+Preserve:
+
+- outer silhouette;
+- volume;
+- major curl groups;
+- direction;
+- culturally and personally important styling.
+
+Then reduce redundant internal detail.
+
+A strong instruction might be:
+
+> Preserve the full rounded volume and curl silhouette, but describe internal texture with only a few grouped colored-pencil marks. Do not render individual curls across the entire head.
+
+### Hair continuity is silhouette continuity
+
+If the same child's hair is chin-length on one page and shoulder-length on the next, no amount of matching eye color will fix the drift.
+
+Record:
+
+- length;
+- part;
+- outer shape;
+- bangs/fringe;
+- major tie, braid, bun, or clip placement;
+- how far the hair extends relative to ears, jaw, neck, and shoulders.
+
+That is more useful than “brown wavy hair.”
+
+---
 
 ## Chapter 10 — The fabric problem
 
-[Draft next]
+Fabric is where “impressive” quietly turns into ridiculous.
+
+A generated dress may look beautiful at first glance. Then look closer.
+
+There are tiny flowers repeated across the fabric. Each flower has several petals. The skirt has realistic folds. The hem has stitched trim. The bodice has subtle embroidery. The sleeves have gathered seams. Highlights describe the weave. Shadows explain every wrinkle.
+
+Now ask the question this guide will keep asking:
+
+**Would a human illustrator actually spend this much time drawing this fabric on this page?**
+
+If the answer is no, the model has spent your detail budget in the wrong place.
+
+### Clothing usually has three jobs
+
+In most children's-book scenes, clothing needs to:
+
+1. identify the character;
+2. support the pose;
+3. contribute a useful color or silhouette.
+
+That is enough.
+
+Unless clothing matters to the plot, it does not need to demonstrate textile manufacturing.
+
+### Pattern multiplies work
+
+A repeating pattern creates visual labor across every fold, curve, and perspective change.
+
+A traditional illustrator who chooses a patterned dress knows they will need to redraw that pattern again and again across the book.
+
+That cost influences the design decision.
+
+A generator does not feel that cost.
+
+It can invent an elaborate pattern instantly, which means it has no natural reason to simplify.
+
+You have to supply that reason.
+
+### Use plain language for plain clothes
+
+Do not be afraid of instructions that sound aesthetically boring:
+
+> Plain blue cotton shirt. No print, no logo, no texture emphasis, no decorative stitching.
+
+> Simple red sweater with one flat color mass and only two or three folds needed to show the pose.
+
+> Yellow dress with no pattern, embroidery, lace, trim, or visible weave.
+
+These are excellent art-direction instructions.
+
+### Folds should explain form, not show off physics
+
+A few folds can show:
+
+- bent elbow;
+- seated posture;
+- twisting torso;
+- fabric hanging from a knee.
+
+Past that point, additional folds may only add noise.
+
+A useful constraint is:
+
+> Clothing folds limited to those necessary to explain posture; avoid realistic fabric simulation.
+
+### When pattern is actually important
+
+Sometimes clothing detail matters.
+
+A grandmother's handmade quilted coat may be a story object.
+
+A child's striped shirt may be a key continuity marker.
+
+A cultural garment may require accurate construction and decoration.
+
+In those cases, detail is not forbidden.
+
+It is **intentional**.
+
+The question is never “Is detail bad?”
+
+The question is “Why is this detail here?”
+
+If you have an answer, keep it.
+
+If the answer is “the model thought it looked nice,” reconsider it.
+
+---
 
 ## Chapter 11 — The everything-is-important problem
 
