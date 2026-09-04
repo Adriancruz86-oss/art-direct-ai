@@ -2,8 +2,6 @@
   const TRACKING_KEY = 'artDirectAiAttribution';
   const params = new URLSearchParams(window.location.search);
 
-  // Keep the first campaign/referrer that brought a visitor in so later
-  // downloads and purchases can be attributed to the original post.
   const existing = (() => {
     try { return JSON.parse(localStorage.getItem(TRACKING_KEY) || '{}'); }
     catch { return {}; }
@@ -28,8 +26,6 @@
       catch { return {}; }
     })();
 
-    // Temporary per-browser counters are useful for testing. The same event
-    // names are also sent to GA4/Plausible automatically once either is added.
     const key = `artDirectAi:${name}`;
     localStorage.setItem(key, String(Number(localStorage.getItem(key) || 0) + 1));
 
@@ -44,13 +40,20 @@
     }
   }
 
-  const guide = document.getElementById('download-guide');
-  if (guide) {
-    guide.addEventListener('click', () => {
-      track('free_guide_open', {
+  const signupForm = document.getElementById('guide-signup');
+  if (signupForm) {
+    signupForm.addEventListener('submit', () => {
+      track('free_guide_signup', {
         funnel_stage: 'lead_magnet',
-        asset: '5 Mistakes Guide'
+        asset: '5 Mistakes Guide',
+        provider: 'buttondown'
       });
+
+      // Buttondown handles confirmation/validation in a new tab. The guide
+      // opens immediately here so the promised freebie is not delayed.
+      window.setTimeout(() => {
+        window.location.href = 'free-guide.html';
+      }, 250);
     });
   }
 
@@ -60,8 +63,6 @@
     });
   });
 
-  // Future checkout buttons can opt into tracking without another JS rewrite:
-  // add data-track="checkout_click" to the element.
   document.querySelectorAll('[data-track]').forEach((element) => {
     element.addEventListener('click', () => {
       track(element.dataset.track, { funnel_stage: element.dataset.stage || '' });
