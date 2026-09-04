@@ -230,9 +230,7 @@ h3 { font-size: 1.7rem; }
 .spark.one { top: 20px; right: 25px; }
 .spark.two { bottom: 22px; left: 24px; }
 .spark.three { top: 45%; left: 18%; }
-.restrained {
-  background: #f0e6d3;
-}
+.restrained { background: #f0e6d3; }
 .scribble-head {
   position: absolute;
   top: 55px;
@@ -268,10 +266,7 @@ h3 { font-size: 1.7rem; }
 .compare-card ul { margin-bottom: 0; padding-left: 1.2rem; }
 .compare-card li { margin: 7px 0; }
 
-.free-guide {
-  padding: 100px 0;
-  background: #dfeaf2;
-}
+.free-guide { padding: 100px 0; background: #dfeaf2; }
 .free-grid {
   display: grid;
   grid-template-columns: 1.15fr .85fr;
@@ -287,6 +282,24 @@ h3 { font-size: 1.7rem; }
   box-shadow: var(--shadow);
 }
 .download-label { color: var(--red); font-size: .76rem; font-weight: 950; letter-spacing: .12em; }
+.signup-form { display: grid; gap: 10px; margin-top: 22px; }
+.signup-form label { font-size: .82rem; font-weight: 850; }
+.signup-form input[type="email"] {
+  width: 100%;
+  min-height: 54px;
+  padding: 0 15px;
+  border: 1px solid rgba(16,38,63,.22);
+  border-radius: 12px;
+  color: var(--ink);
+  background: white;
+  font: inherit;
+  outline: none;
+}
+.signup-form input[type="email"]:focus {
+  border-color: var(--ink);
+  box-shadow: 0 0 0 3px rgba(16,38,63,.08);
+}
+.buttondown-target { display: none; width: 0; height: 0; border: 0; }
 .privacy-note { margin-bottom: 0; color: var(--muted); font-size: .8rem; text-align: center; }
 
 .product-heading .subtitle { color: var(--muted); font-size: 1.15rem; }
