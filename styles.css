@@ -281,6 +281,8 @@ h3 { font-size: 1.7rem; }
   background: var(--white);
   box-shadow: var(--shadow);
 }
+.guide-download-card { text-align: center; }
+.guide-cover { width: min(260px, 78%); margin: 0 auto 22px; box-shadow: 0 16px 35px rgba(16,38,63,.16); }
 .download-label { color: var(--red); font-size: .76rem; font-weight: 950; letter-spacing: .12em; }
 .signup-form { display: grid; gap: 10px; margin-top: 22px; }
 .signup-form label { font-size: .82rem; font-weight: 850; }
@@ -310,6 +312,7 @@ h3 { font-size: 1.7rem; }
   align-items: center;
 }
 .book-mockup { perspective: 1200px; padding: 20px; }
+.product-cover { display: block; width: min(390px, 100%); margin: 0 auto; border-radius: 6px; box-shadow: 18px 20px 40px rgba(16,38,63,.24); }
 .book-cover {
   aspect-ratio: 4 / 5.4;
   max-width: 390px;
@@ -342,6 +345,11 @@ h3 { font-size: 1.7rem; }
 .price-row small { display: block; color: var(--muted); font-weight: 800; }
 .price-row strong { font-size: 2.5rem; line-height: 1; }
 
+.companion { padding: 100px 0; background: #e5efdc; }
+.companion-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: clamp(40px, 7vw, 90px); align-items: center; }
+.companion .subtitle { color: #42564d; font-size: 1.15rem; }
+.companion-cover { max-width: 330px; }
+
 .philosophy { text-align: center; }
 blockquote {
   margin: 0 0 20px;
@@ -359,7 +367,7 @@ blockquote {
 }
 
 @media (max-width: 820px) {
-  .hero, .free-grid, .product-layout, .compare-grid { grid-template-columns: 1fr; }
+  .hero, .free-grid, .product-layout, .compare-grid, .companion-grid { grid-template-columns: 1fr; }
   .hero { padding-top: 55px; }
   .hero-card { min-height: 420px; }
   .poster-center { min-height: 340px; }
