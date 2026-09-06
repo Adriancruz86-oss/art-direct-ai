@@ -28,16 +28,10 @@
 
     const key = `artDirectAi:${name}`;
     localStorage.setItem(key, String(Number(localStorage.getItem(key) || 0) + 1));
-
     const payload = { ...details, ...attribution };
 
-    if (typeof window.gtag === 'function') {
-      window.gtag('event', name, payload);
-    }
-
-    if (typeof window.plausible === 'function') {
-      window.plausible(name, { props: payload });
-    }
+    if (typeof window.gtag === 'function') window.gtag('event', name, payload);
+    if (typeof window.plausible === 'function') window.plausible(name, { props: payload });
   }
 
   const signupForm = document.getElementById('guide-signup');
@@ -48,19 +42,12 @@
         asset: '5 Mistakes Guide',
         provider: 'buttondown'
       });
-
-      // Buttondown handles confirmation/validation in a new tab. The guide
-      // opens immediately here so the promised freebie is not delayed.
-      window.setTimeout(() => {
-        window.location.href = 'free-guide.html';
-      }, 250);
+      window.setTimeout(() => { window.location.href = 'free-guide.html'; }, 250);
     });
   }
 
   document.querySelectorAll('a[href="#full-guide"]').forEach((link) => {
-    link.addEventListener('click', () => {
-      track('full_guide_interest', { funnel_stage: 'product_interest' });
-    });
+    link.addEventListener('click', () => track('full_guide_interest', { funnel_stage: 'product_interest' }));
   });
 
   document.querySelectorAll('[data-track]').forEach((element) => {
@@ -77,20 +64,14 @@
       document.body.classList.add('reader-open');
       track('essay_reader_open', { funnel_stage: 'editorial_interest' });
     };
-
-    document.querySelectorAll('[data-open-essay]').forEach((button) => {
-      button.addEventListener('click', openEssay);
-    });
-
+    document.querySelectorAll('[data-open-essay]').forEach((button) => button.addEventListener('click', openEssay));
     essayReader.querySelector('[data-close-essay]').addEventListener('click', () => essayReader.close());
-    essayReader.addEventListener('click', (event) => {
-      if (event.target === essayReader) essayReader.close();
-    });
+    essayReader.addEventListener('click', (event) => { if (event.target === essayReader) essayReader.close(); });
     essayReader.addEventListener('close', () => document.body.classList.remove('reader-open'));
   }
 
-  // Add the free kids' creative-AI guide to the public landing page without
-  // disturbing the existing product layout.
+  // Public freebie for families. Keep it separate from the creator lead magnet:
+  // no Gumroad gate and no author-site detour.
   const fullGuide = document.getElementById('full-guide');
   if (fullGuide && !document.getElementById('kids-ai-free-guide')) {
     const section = document.createElement('section');
@@ -99,28 +80,35 @@
     section.innerHTML = `
       <div class="section-shell free-grid">
         <div>
-          <p class="kicker">FREE KIDS + PARENTS GUIDE</p>
+          <p class="kicker">FREE FOR KIDS + GROWN-UPS</p>
           <h2>5 Ways Your Kid Can Actually Use AI</h2>
           <p><strong>No homework. No cheating. Just creating.</strong></p>
-          <p>A practical activity guide for using AI as a creative tool: invent ridiculous machines, art-direct images, fact-check confident answers, build original characters, and make something for somebody else.</p>
+          <p>A colorful 21-page activity guide that puts the kid in charge. Invent ridiculous machines, art-direct pictures, catch AI mistakes, create weird characters, and make something personal for somebody else.</p>
           <div class="guide-points">
             <span>✓ Five hands-on creative challenges</span>
-            <span>✓ Printable activity prompts</span>
-            <span>✓ Simple fact-checking habits</span>
-            <span>✓ A human-directed approach to AI</span>
+            <span>✓ Jordan &amp; Evelyn throughout</span>
+            <span>✓ Fact-checking without a lecture</span>
+            <span>✓ Human ideas stay in charge</span>
           </div>
         </div>
         <div class="download-box guide-download-card">
-          <p class="download-label">FREE ACTIVITY GUIDE</p>
+          <p class="download-label">FREE • 21-PAGE PDF</p>
           <h3>Give them a blank page, not an answer key.</h3>
-          <p>Read the guide online or use the built-in Print / Save as PDF button to keep a printable copy.</p>
-          <a class="button primary full" href="kids-ai-guide.html" data-track="kids_ai_guide_click" data-stage="lead_magnet">Open the free guide</a>
-          <p class="privacy-note">Free. No signup required.</p>
+          <p>No email. No Gumroad. Download it directly from Art Direct AI and start making something.</p>
+          <a class="button primary full" href="downloads/5_Ways_Your_Kid_Can_Actually_Use_AI_FREE.pdf" download data-track="kids_ai_pdf_download" data-stage="lead_magnet">Download the free activity guide</a>
+          <a class="text-link" href="kids-ai-guide.html" data-track="kids_ai_web_guide_click" data-stage="lead_magnet" style="display:inline-block;margin-top:14px">Preview the activities online →</a>
+          <p class="privacy-note">Free PDF. No signup required.</p>
         </div>
       </div>`;
     fullGuide.parentNode.insertBefore(section, fullGuide);
-    section.querySelector('[data-track]').addEventListener('click', () => {
-      track('kids_ai_guide_click', { funnel_stage: 'lead_magnet', asset: '5 Ways Your Kid Can Actually Use AI' });
+
+    section.querySelectorAll('[data-track]').forEach((element) => {
+      element.addEventListener('click', () => {
+        track(element.dataset.track, {
+          funnel_stage: element.dataset.stage || 'lead_magnet',
+          asset: '5 Ways Your Kid Can Actually Use AI'
+        });
+      });
     });
   }
 
