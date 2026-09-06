@@ -210,7 +210,7 @@ h3 { font-size: 1.7rem; }
   letter-spacing: .11em;
 }
 .book-art-crop {
-  height: 280px;
+  aspect-ratio: 1.85 / 1;
   position: relative;
   overflow: hidden;
   margin-bottom: 20px;
