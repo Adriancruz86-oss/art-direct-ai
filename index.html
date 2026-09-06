@@ -116,15 +116,29 @@
           <p class="subtitle">A short essay on AI, authorship, and the argument underneath the argument. It asks a harder question than whether AI touched the work: who made the creative decisions?</p>
         </div>
         <div class="essay-gallery" aria-label="Preview pages from Who Gets to Call Themselves a Writer?">
-          <a class="essay-page essay-cover-page" href="assets/essay-cover.jpeg" target="_blank" rel="noopener"><img src="assets/essay-cover.jpeg" alt="Cover of Who Gets to Call Themselves a Writer?" /></a>
-          <a class="essay-page" href="assets/essay-page-2.jpeg" target="_blank" rel="noopener"><img src="assets/essay-page-2.jpeg" alt="Essay page: Why Are We Even Asking This?" /></a>
-          <a class="essay-page" href="assets/essay-page-3.jpeg" target="_blank" rel="noopener"><img src="assets/essay-page-3.jpeg" alt="Essay page: But Didn't AI Steal All of This?" /></a>
-          <a class="essay-page" href="assets/essay-page-4.jpeg" target="_blank" rel="noopener"><img src="assets/essay-page-4.jpeg" alt="Essay page: Pick a Number Between 1 and 100" /></a>
-          <a class="essay-page" href="assets/essay-page-5.jpeg" target="_blank" rel="noopener"><img src="assets/essay-page-5.jpeg" alt="Essay page: So Does Using AI Make You a Writer?" /></a>
+          <button class="essay-page essay-cover-page" type="button" data-open-essay><img src="assets/essay-cover.jpeg" alt="Cover of Who Gets to Call Themselves a Writer?" /></button>
+          <button class="essay-page" type="button" data-open-essay><img src="assets/essay-page-2.jpeg" alt="Essay page: Why Are We Even Asking This?" /></button>
+          <button class="essay-page" type="button" data-open-essay><img src="assets/essay-page-3.jpeg" alt="Essay page: But Didn't AI Steal All of This?" /></button>
+          <button class="essay-page" type="button" data-open-essay><img src="assets/essay-page-4.jpeg" alt="Essay page: Pick a Number Between 1 and 100" /></button>
+          <button class="essay-page" type="button" data-open-essay><img src="assets/essay-page-5.jpeg" alt="Essay page: So Does Using AI Make You a Writer?" /></button>
         </div>
-        <p class="essay-note">Select any page to read it full size.</p>
+        <p class="essay-note">Select any page to open the complete scrollable essay.</p>
       </div>
     </section>
+
+    <dialog id="essay-reader" class="essay-reader" aria-labelledby="essay-reader-title">
+      <div class="reader-bar">
+        <div><small>COMPANION ESSAY</small><strong id="essay-reader-title">Who Gets to Call Themselves a Writer?</strong></div>
+        <button class="reader-close" type="button" data-close-essay aria-label="Close essay reader">Close ×</button>
+      </div>
+      <div class="reader-pages">
+        <img src="assets/essay-cover.jpeg" alt="Essay cover, page 1" />
+        <img src="assets/essay-page-2.jpeg" alt="Essay page 2" loading="lazy" />
+        <img src="assets/essay-page-3.jpeg" alt="Essay page 3" loading="lazy" />
+        <img src="assets/essay-page-4.jpeg" alt="Essay page 4" loading="lazy" />
+        <img src="assets/essay-page-5.jpeg" alt="Essay page 5" loading="lazy" />
+      </div>
+    </dialog>
 
     <section class="philosophy"><div class="section-shell narrow"><blockquote>“AI should give you material to work with — not permission to stop working.”</blockquote><p>That's the entire philosophy behind Art Direct AI.</p></div></section>
   </main>

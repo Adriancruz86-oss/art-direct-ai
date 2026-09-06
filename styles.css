@@ -310,10 +310,23 @@ h3 { font-size: 1.7rem; }
 .essay-intro h2 { margin-bottom: 0; }
 .essay-intro .subtitle { margin: 0; color: #4d5d59; font-size: 1.1rem; }
 .essay-gallery { display: grid; grid-template-columns: 1.35fr repeat(4, 1fr); gap: 16px; align-items: start; }
-.essay-page { display: block; overflow: hidden; border-radius: 8px; background: var(--white); box-shadow: 0 12px 28px rgba(16,38,63,.13); transition: transform .18s ease, box-shadow .18s ease; }
+.essay-page { display: block; width: 100%; padding: 0; overflow: hidden; border: 0; border-radius: 8px; background: var(--white); box-shadow: 0 12px 28px rgba(16,38,63,.13); cursor: pointer; transition: transform .18s ease, box-shadow .18s ease; }
 .essay-page:hover { transform: translateY(-5px); box-shadow: 0 18px 35px rgba(16,38,63,.18); }
+.essay-page:focus-visible { outline: 4px solid var(--red); outline-offset: 4px; }
 .essay-page img { display: block; width: 100%; height: auto; }
 .essay-note { margin: 18px 0 0; color: var(--muted); font-size: .82rem; text-align: right; }
+
+.essay-reader { width: min(920px, calc(100% - 24px)); height: calc(100dvh - 24px); max-height: none; margin: auto; padding: 0; overflow-y: auto; border: 0; border-radius: 16px; background: #ddd4c7; box-shadow: 0 28px 90px rgba(0,0,0,.38); }
+.essay-reader::backdrop { background: rgba(7,18,29,.82); backdrop-filter: blur(5px); }
+.reader-bar { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 14px 18px; color: white; background: rgba(16,38,63,.96); box-shadow: 0 4px 18px rgba(0,0,0,.2); }
+.reader-bar div { display: grid; }
+.reader-bar small { color: #d5bd8e; font-size: .66rem; font-weight: 900; letter-spacing: .12em; }
+.reader-bar strong { font-family: Georgia, serif; font-size: clamp(.95rem, 2vw, 1.25rem); }
+.reader-close { min-height: 42px; padding: 0 14px; flex: 0 0 auto; border: 1px solid rgba(255,255,255,.35); border-radius: 9px; color: white; background: transparent; font: inherit; font-weight: 800; cursor: pointer; }
+.reader-close:hover { background: rgba(255,255,255,.12); }
+.reader-pages { display: grid; gap: 18px; width: min(780px, calc(100% - 24px)); margin: 18px auto; }
+.reader-pages img { display: block; width: 100%; height: auto; background: #fffdf8; box-shadow: 0 8px 24px rgba(16,38,63,.2); }
+body.reader-open { overflow: hidden; }
 
 .philosophy { text-align: center; }
 blockquote {

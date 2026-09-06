@@ -69,6 +69,26 @@
     });
   });
 
+  const essayReader = document.getElementById('essay-reader');
+  if (essayReader) {
+    const openEssay = () => {
+      essayReader.scrollTop = 0;
+      essayReader.showModal();
+      document.body.classList.add('reader-open');
+      track('essay_reader_open', { funnel_stage: 'editorial_interest' });
+    };
+
+    document.querySelectorAll('[data-open-essay]').forEach((button) => {
+      button.addEventListener('click', openEssay);
+    });
+
+    essayReader.querySelector('[data-close-essay]').addEventListener('click', () => essayReader.close());
+    essayReader.addEventListener('click', (event) => {
+      if (event.target === essayReader) essayReader.close();
+    });
+    essayReader.addEventListener('close', () => document.body.classList.remove('reader-open'));
+  }
+
   window.ArtDirectAI = {
     track,
     attribution: () => {
