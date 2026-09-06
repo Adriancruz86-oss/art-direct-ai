@@ -89,6 +89,41 @@
     essayReader.addEventListener('close', () => document.body.classList.remove('reader-open'));
   }
 
+  // Add the free kids' creative-AI guide to the public landing page without
+  // disturbing the existing product layout.
+  const fullGuide = document.getElementById('full-guide');
+  if (fullGuide && !document.getElementById('kids-ai-free-guide')) {
+    const section = document.createElement('section');
+    section.id = 'kids-ai-free-guide';
+    section.className = 'free-guide';
+    section.innerHTML = `
+      <div class="section-shell free-grid">
+        <div>
+          <p class="kicker">FREE KIDS + PARENTS GUIDE</p>
+          <h2>5 Ways Your Kid Can Actually Use AI</h2>
+          <p><strong>No homework. No cheating. Just creating.</strong></p>
+          <p>A practical activity guide for using AI as a creative tool: invent ridiculous machines, art-direct images, fact-check confident answers, build original characters, and make something for somebody else.</p>
+          <div class="guide-points">
+            <span>✓ Five hands-on creative challenges</span>
+            <span>✓ Printable activity prompts</span>
+            <span>✓ Simple fact-checking habits</span>
+            <span>✓ A human-directed approach to AI</span>
+          </div>
+        </div>
+        <div class="download-box guide-download-card">
+          <p class="download-label">FREE ACTIVITY GUIDE</p>
+          <h3>Give them a blank page, not an answer key.</h3>
+          <p>Read the guide online or use the built-in Print / Save as PDF button to keep a printable copy.</p>
+          <a class="button primary full" href="kids-ai-guide.html" data-track="kids_ai_guide_click" data-stage="lead_magnet">Open the free guide</a>
+          <p class="privacy-note">Free. No signup required.</p>
+        </div>
+      </div>`;
+    fullGuide.parentNode.insertBefore(section, fullGuide);
+    section.querySelector('[data-track]').addEventListener('click', () => {
+      track('kids_ai_guide_click', { funnel_stage: 'lead_magnet', asset: '5 Ways Your Kid Can Actually Use AI' });
+    });
+  }
+
   window.ArtDirectAI = {
     track,
     attribution: () => {
