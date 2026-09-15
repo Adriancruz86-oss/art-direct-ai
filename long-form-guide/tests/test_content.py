@@ -70,6 +70,22 @@ class SourceContractTests(unittest.TestCase):
             violations.extend((path.name, hit) for hit in find_prohibited_text(path.read_text(encoding="utf-8")))
         self.assertEqual(violations, [])
 
+    def test_opening_modules_cover_the_core_method(self):
+        sections = load_markdown_sections(CONTENT_DIR)
+        text = "\n".join(sections.get(key, "") for key in ("00", "01", "02")).casefold()
+        required = [
+            "do not ask ai to remember the whole book",
+            "project bible",
+            "chapter brief",
+            "60,000-word",
+            "[fiction]",
+            "[nonfiction]",
+            "[biblical project]",
+            "20-30 chapters",
+        ]
+        missing = [item for item in required if item not in text]
+        self.assertEqual(missing, [])
+
 
 if __name__ == "__main__":
     unittest.main()
