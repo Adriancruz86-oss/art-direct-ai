@@ -117,6 +117,19 @@ class SourceContractTests(unittest.TestCase):
         ]
         self.assertEqual([item for item in required if item not in text], [])
 
+    def test_template_and_prompt_inventory(self):
+        template_keys = {"id", "title", "badge", "purpose", "instructions", "fields", "example"}
+        prompt_keys = {
+            "id", "title", "stage", "inputs", "author_decision", "prompt",
+            "output_format", "model_must_not_decide", "example",
+        }
+        templates = load_yaml_records(DATA_DIR / "templates.yaml", template_keys)
+        prompts = load_yaml_records(DATA_DIR / "prompts.yaml", prompt_keys)
+        self.assertEqual(len(templates), 18)
+        self.assertEqual(len(prompts), 14)
+        self.assertEqual(len({record["id"] for record in templates}), 18)
+        self.assertEqual(len({record["id"] for record in prompts}), 14)
+
 
 if __name__ == "__main__":
     unittest.main()
