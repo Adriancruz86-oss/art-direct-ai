@@ -102,6 +102,21 @@ class SourceContractTests(unittest.TestCase):
         ]
         self.assertEqual([item for item in required if item not in text], [])
 
+    def test_revision_assembly_and_examples_are_complete(self):
+        sections = load_markdown_sections(CONTENT_DIR)
+        text = "\n".join(sections.get(key, "") for key in ("05", "06", "07")).casefold()
+        required = [
+            "promise and structure pass",
+            "evidence and citation pass",
+            "theological consistency review",
+            "youth-audience suitability review",
+            "beta-reader",
+            "version control",
+            "strength under control",
+            "mara",
+        ]
+        self.assertEqual([item for item in required if item not in text], [])
+
 
 if __name__ == "__main__":
     unittest.main()
