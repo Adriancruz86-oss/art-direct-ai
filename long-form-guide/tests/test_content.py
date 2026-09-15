@@ -86,6 +86,22 @@ class SourceContractTests(unittest.TestCase):
         missing = [item for item in required if item not in text]
         self.assertEqual(missing, [])
 
+    def test_operating_system_and_drafting_cover_required_controls(self):
+        sections = load_markdown_sections(CONTENT_DIR)
+        text = "\n".join(sections.get(key, "") for key in ("03", "04")).casefold()
+        required = [
+            "decision log",
+            "continuity tracker",
+            "claim-and-source ledger",
+            "citation and interpretation ledger",
+            "context-reset packet",
+            "chapter handoff",
+            "drafting loop",
+            "verify every quotation",
+            "start a clean conversation",
+        ]
+        self.assertEqual([item for item in required if item not in text], [])
+
 
 if __name__ == "__main__":
     unittest.main()
