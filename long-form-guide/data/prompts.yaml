@@ -1,0 +1,156 @@
+[
+  {
+    "id": "promise-test",
+    "title": "Premise or Thesis Test",
+    "stage": "Foundation",
+    "inputs": ["Three candidate promises", "Reader profile", "Scope boundaries"],
+    "author_decision": "Which promise the book will make.",
+    "prompt": "Compare the candidate promises for specificity, reader fit, credible transformation, distinct approach, and exclusions. Diagnose; do not choose for me.",
+    "output_format": "Table with strengths, risks, hidden assumptions, and author questions.",
+    "model_must_not_decide": "The final promise, belief, or moral position.",
+    "example": "Compare three versions of the biblical-manhood promise and flag any outcome the book cannot guarantee."
+  },
+  {
+    "id": "outline-stress-test",
+    "title": "Outline Stress Test",
+    "stage": "Architecture",
+    "inputs": ["Book promise", "Part functions", "Chapter map", "Dependencies"],
+    "author_decision": "Which structural changes to approve.",
+    "prompt": "Act as a skeptical developmental editor. Identify duplicated jobs, missing dependencies, weak middle movement, and chapters that do not advance the promise. Do not rewrite the outline.",
+    "output_format": "Issue, evidence, reader consequence, and two possible author decisions.",
+    "model_must_not_decide": "Chapter additions, deletions, order, or final scope.",
+    "example": "Flag whether work, discipline, and responsibility repeat rather than develop."
+  },
+  {
+    "id": "chapter-brief-builder",
+    "title": "Chapter Brief Builder",
+    "stage": "Architecture",
+    "inputs": ["Project bible", "Outline entry", "Prior handoff", "Target words"],
+    "author_decision": "The chapter's primary job and ending state.",
+    "prompt": "Propose three distinct chapter-brief options that preserve the supplied architecture. Keep required facts separate from suggestions.",
+    "output_format": "Three concise briefs using the approved brief fields.",
+    "model_must_not_decide": "Theological stance, source validity, plot meaning, or final brief.",
+    "example": "Offer three ways Strength Under Control can move from misconception to practical discernment."
+  },
+  {
+    "id": "scene-options",
+    "title": "Fiction Scene Options",
+    "stage": "Drafting",
+    "inputs": ["Scene brief", "Character tracker", "Continuity facts", "World rules"],
+    "author_decision": "Which scene path expresses the story's meaning.",
+    "prompt": "Generate four scene complications grounded in established motives and rules. State the pressure, choice, consequence, and continuity cost.",
+    "output_format": "Four short option cards.",
+    "model_must_not_decide": "Character meaning, canon changes, or final scene choice.",
+    "example": "Give Mara four reasons she must accept Tomas's route without suddenly trusting him."
+  },
+  {
+    "id": "argument-map",
+    "title": "Nonfiction Argument Map",
+    "stage": "Drafting",
+    "inputs": ["Chapter brief", "Verified claim records", "Defined terms", "Reader state"],
+    "author_decision": "Which claims and evidence the chapter will use.",
+    "prompt": "Map a sequence of claim, evidence, explanation, limitation, objection, application, and transition using only supplied verified material.",
+    "output_format": "Numbered argument moves with missing-evidence flags.",
+    "model_must_not_decide": "Truth of unverified claims or adequacy of a source not supplied.",
+    "example": "Map restraint versus passivity without introducing a verse or psychological claim."
+  },
+  {
+    "id": "controlled-draft",
+    "title": "Draft From an Approved Brief",
+    "stage": "Drafting",
+    "inputs": ["Context packet", "Approved internal move", "Voice sheet", "Word range"],
+    "author_decision": "Whether the draft is approved, revised, or rejected.",
+    "prompt": "Draft only the named section within the word range. Preserve all required facts and prohibitions. End at the specified handoff point.",
+    "output_format": "Prose only, followed by a three-line compliance note.",
+    "model_must_not_decide": "New claims, new canon, chapter conclusion, or changes to the brief.",
+    "example": "Draft 450-550 words distinguishing restraint from passivity; do not quote Scripture or conclude the chapter."
+  },
+  {
+    "id": "context-reset",
+    "title": "Context Reset and Handoff",
+    "stage": "Operating System",
+    "inputs": ["Project bible excerpt", "Chapter brief", "Trackers", "Prior handoff", "Exact task"],
+    "author_decision": "Which context is relevant and current.",
+    "prompt": "Confirm the task, list the constraints you will preserve, list missing information, and wait for approval before drafting.",
+    "output_format": "Task statement, constraints, missing information, and no prose draft.",
+    "model_must_not_decide": "Which conflicting document is authoritative.",
+    "example": "Begin a clean Chapter 6 fiction session using only current facts about Mara, Tomas, and the route."
+  },
+  {
+    "id": "continuity-audit",
+    "title": "Continuity Audit",
+    "stage": "Revision",
+    "inputs": ["Manuscript section", "Continuity tracker", "Timeline", "Definitions"],
+    "author_decision": "How to resolve each confirmed conflict.",
+    "prompt": "Find contradictions between the supplied manuscript and control records. Quote the minimum text needed to identify each location. Do not repair automatically.",
+    "output_format": "Location, control fact, manuscript fact, severity, and resolution question.",
+    "model_must_not_decide": "Which version becomes canon.",
+    "example": "Check whether Mara uses her bandaged hand and whether Tomas knows more than the tracker allows."
+  },
+  {
+    "id": "claim-audit",
+    "title": "Source and Claim Audit",
+    "stage": "Revision",
+    "inputs": ["Chapter", "Claim-and-source ledger"],
+    "author_decision": "Whether a claim stays, narrows, receives a source, or is removed.",
+    "prompt": "Inventory factual and causal claims. Match each to a supplied ledger ID. Flag claims with no record or wording broader than the source note. Do not verify using memory.",
+    "output_format": "Claim, location, ledger ID, status, and required human action.",
+    "model_must_not_decide": "That a source is authoritative or correctly quoted.",
+    "example": "Flag every empirical claim in a chapter aimed at young readers for manual source review."
+  },
+  {
+    "id": "voice-comparison",
+    "title": "Voice Comparison",
+    "stage": "Revision",
+    "inputs": ["Draft passage", "Voice sheet", "Approved author sample"],
+    "author_decision": "Which differences are defects and which are intentional.",
+    "prompt": "Compare behavior rather than topic: directness, rhythm, vocabulary, uncertainty, examples, and endings. Diagnose without rewriting.",
+    "output_format": "Behavior, draft evidence, sample evidence, reader effect, and revision choice.",
+    "model_must_not_decide": "What the author's authentic voice is.",
+    "example": "Identify where the biblical-project draft becomes shaming or generically motivational."
+  },
+  {
+    "id": "repetition-detection",
+    "title": "Repetition Detection",
+    "stage": "Revision",
+    "inputs": ["Chapter summaries", "Key claims", "Manuscript text"],
+    "author_decision": "Which repetitions deepen, reinforce, move, combine, or disappear.",
+    "prompt": "Cluster repeated claims and examples. Distinguish developmental return from accidental restatement.",
+    "output_format": "Cluster, locations, function, reader effect, and options.",
+    "model_must_not_decide": "Which passage to delete.",
+    "example": "Compare every definition of responsibility across the 24-chapter map."
+  },
+  {
+    "id": "developmental-edit",
+    "title": "Developmental Edit",
+    "stage": "Revision",
+    "inputs": ["Book promise", "Architecture", "Chapter summaries", "Open issues"],
+    "author_decision": "Structural revisions and their priority.",
+    "prompt": "Evaluate promise delivery, sequence, dependency, escalation, balance, and ending. Cite the supplied structure. Do not line edit.",
+    "output_format": "High, medium, and low priority findings with evidence and author questions.",
+    "model_must_not_decide": "The book's final structure or beliefs.",
+    "example": "Assess whether the biblical-manhood middle moves from private practice to relational pressure."
+  },
+  {
+    "id": "constrained-line-edit",
+    "title": "Constrained Line Edit",
+    "stage": "Revision",
+    "inputs": ["Approved passage", "Voice sheet", "Protected facts and terms"],
+    "author_decision": "Which edits enter the manuscript.",
+    "prompt": "Suggest sentence-level changes for clarity, rhythm, and precision. Preserve facts, claims, terms, and meaning. Explain material changes.",
+    "output_format": "Original excerpt, proposed revision, reason, and risk.",
+    "model_must_not_decide": "New claims, examples, theology, plot facts, or structural changes.",
+    "example": "Edit one approved page without changing the definition of restraint or its safety limitation."
+  },
+  {
+    "id": "chapter-summary-update",
+    "title": "Chapter Summary and Tracker Update",
+    "stage": "Handoff",
+    "inputs": ["Approved chapter", "Brief", "Current trackers"],
+    "author_decision": "Which extracted changes are accurate and approved.",
+    "prompt": "Extract the chapter's accomplished job, ending state, new definitions or facts, promises, open issues, and proposed tracker updates. Do not infer unstated canon.",
+    "output_format": "Completed handoff fields plus proposed tracker rows.",
+    "model_must_not_decide": "Whether the chapter is approved or whether an inference becomes canon.",
+    "example": "Summarize Strength Under Control and identify later chapters that must preserve its definitions."
+  }
+]

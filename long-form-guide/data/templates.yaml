@@ -1,0 +1,164 @@
+[
+  {
+    "id": "book-promise",
+    "title": "Book Promise Worksheet",
+    "badge": "Template",
+    "purpose": "Define the specific reader experience or transformation the book must deliver.",
+    "instructions": "Complete the reader, problem, change, approach, and exclusion fields. Write three versions, then approve one sentence.",
+    "fields": ["Primary reader", "Starting problem", "Desired change", "Distinct approach", "What the book will not promise", "Approved promise"],
+    "example": "For young men ages 13-21, explain biblical manhood as identity expressed through responsibility, courage, restraint, service, integrity, and faithful action."
+  },
+  {
+    "id": "reader-transformation",
+    "title": "Reader Profile and Transformation",
+    "badge": "Template",
+    "purpose": "Write to a specific person and define observable progress.",
+    "instructions": "Choose a primary developmental midpoint. Describe before, understand, practice, and continue states.",
+    "fields": ["Primary age and stage", "Existing beliefs", "Private fears", "Natural language", "Before", "Understand", "Practice", "Continue"],
+    "example": "Primary reader: age 16-17. Before: confuses manhood with approval or toughness. Practice: can choose one responsible action under pressure."
+  },
+  {
+    "id": "project-bible",
+    "title": "Master Project Bible",
+    "badge": "Template",
+    "purpose": "Preserve the manuscript's stable decisions outside any AI conversation.",
+    "instructions": "Record only approved project-level decisions. Move exploration and rejected ideas elsewhere.",
+    "fields": ["Title", "Promise", "Reader", "Scope", "Exclusions", "Parts", "Voice rules", "Evidence policy", "Sensitive boundaries", "Open questions"],
+    "example": "Voice rule: challenge without shame. Evidence policy: Scripture wording is checked in the named translation before use."
+  },
+  {
+    "id": "word-architecture",
+    "title": "60,000-Word Architecture",
+    "badge": "Template",
+    "purpose": "Allocate the manuscript across purposeful parts before drafting.",
+    "instructions": "Give each part a function, chapter range, target words, starting state, and ending state. Total the targets.",
+    "fields": ["Part", "Function", "Chapters", "Target words", "Starting state", "Ending state", "Dependencies"],
+    "example": "Part II - Foundations; Chapters 5-9; 12,000 words; moves from identity to a working definition of disciplined strength."
+  },
+  {
+    "id": "chapter-map",
+    "title": "Chapter Map and Word Budget",
+    "badge": "Template",
+    "purpose": "Give every chapter one primary job and a visible share of the total length.",
+    "instructions": "List each chapter once. If two chapters have the same job, merge or differentiate them.",
+    "fields": ["Number", "Working title", "Primary job", "Dependency", "Target words", "Minimum", "Maximum", "Status"],
+    "example": "Chapter 5 - Strength Under Control; distinguish restraint from domination and passivity; 2,500-word target."
+  },
+  {
+    "id": "chapter-brief",
+    "title": "Chapter Brief",
+    "badge": "Template",
+    "purpose": "Create a drafting contract between architecture and prose.",
+    "instructions": "Approve the brief before drafting. Revise it openly if the chapter's job changes.",
+    "fields": ["Primary job", "Beginning state", "Ending state", "Required material", "Exclusions", "Internal moves", "Opening", "Closing", "Word budget", "Review needs"],
+    "example": "Ending state: the reader can name one situation where restraint is active courage rather than passivity."
+  },
+  {
+    "id": "voice-sheet",
+    "title": "Style and Voice Sheet",
+    "badge": "Template",
+    "purpose": "Define voice through observable behavior instead of flattering adjectives.",
+    "instructions": "Write rules, prohibitions, and short approved examples. Keep the sheet brief enough to reuse.",
+    "fields": ["Point of view", "Reader relationship", "Directness", "Sentence habits", "Vocabulary", "Uncertainty", "Humor", "Avoid", "Approved samples"],
+    "example": "Avoid: 'A real man never struggles.' Prefer agency: 'Your struggle does not remove your responsibility for the next choice.'"
+  },
+  {
+    "id": "context-reset",
+    "title": "Context-Reset Packet",
+    "badge": "Template",
+    "purpose": "Start a clean conversation with the smallest accurate context for one task.",
+    "instructions": "Include only relevant project rules, brief material, tracker facts, and the exact requested output.",
+    "fields": ["Book promise", "Current location", "Relevant rules", "Chapter brief", "Prior summary", "Tracker facts", "Voice sample", "Exact task", "Output format", "Forbidden decisions"],
+    "example": "Draft only the 450-550-word distinction between restraint and passivity. Do not quote Scripture or conclude the chapter."
+  },
+  {
+    "id": "decision-log",
+    "title": "Decision Log",
+    "badge": "Template",
+    "purpose": "Prevent important questions from being repeatedly reopened or silently changed.",
+    "instructions": "Record the question, options, final decision, reason, affected files, and review trigger.",
+    "fields": ["Date", "Question", "Options", "Decision", "Reason", "Affected documents", "Review trigger"],
+    "example": "Decision: write to age 16-17 as the midpoint, then vary examples for younger and older readers."
+  },
+  {
+    "id": "fiction-character",
+    "title": "Fiction Character Tracker",
+    "badge": "Fiction",
+    "purpose": "Preserve character identity, desire, knowledge, relationships, and change.",
+    "instructions": "Update only after material is approved. Track what the character knows by chapter.",
+    "fields": ["Character", "Want", "Need", "Fear", "Misbelief", "Voice", "Physical facts", "Relationships", "Knowledge by chapter", "Arc status"],
+    "example": "Mara notices spatial details before emotional ones and does not know why her brother disappeared."
+  },
+  {
+    "id": "fiction-timeline",
+    "title": "Fiction Timeline and Continuity",
+    "badge": "Fiction",
+    "purpose": "Control time, location, objects, injuries, setups, and payoffs.",
+    "instructions": "Add one row per scene. Flag any fact that a later scene must preserve.",
+    "fields": ["Scene", "Date/time", "Location", "Viewpoint", "Characters", "Objects", "Injuries", "Knowledge change", "Setup", "Payoff"],
+    "example": "Chapter 6: Mara's left hand remains bandaged; Tomas sees only one corner of the coded map."
+  },
+  {
+    "id": "claim-source",
+    "title": "Nonfiction Claim-and-Source Ledger",
+    "badge": "Nonfiction",
+    "purpose": "Connect every meaningful factual claim to a source a human has opened and checked.",
+    "instructions": "Treat model suggestions as leads only. Record exact locations and whether the source supports the wording.",
+    "fields": ["Claim ID", "Claim", "Chapter", "Source", "Source type", "Location", "Support level", "Verified date", "Quotation status", "Limitations"],
+    "example": "Status remains lead only until the author opens the source and confirms the claim at the recorded page."
+  },
+  {
+    "id": "biblical-ledger",
+    "title": "Biblical Citation and Interpretation Ledger",
+    "badge": "Biblical Project",
+    "purpose": "Keep biblical text, observation, interpretation, doctrine, and application distinct.",
+    "instructions": "Verify direct wording in the chosen translation. Identify the author's interpretive and theological choices.",
+    "fields": ["Passage", "Translation", "Verified wording", "Context", "Observation", "Interpretation", "Alternative view", "Theological source", "Principle", "Application", "Reviewer", "Status"],
+    "example": "Application is recorded separately from the passage observation and receives youth-suitability review."
+  },
+  {
+    "id": "draft-session",
+    "title": "Drafting-Session Checklist",
+    "badge": "Template",
+    "purpose": "Keep each drafting session attached to an approved purpose.",
+    "instructions": "Complete before, during, and after one controlled section.",
+    "fields": ["Brief reviewed", "Blocking decision resolved", "Section selected", "Context loaded", "Word range", "Review complete", "Approved/revised/rejected", "Trackers updated", "Next task"],
+    "example": "Next task: draft the 300-word complication explaining why restraint is not silence in danger."
+  },
+  {
+    "id": "chapter-handoff",
+    "title": "Chapter Handoff Summary",
+    "badge": "Template",
+    "purpose": "Transfer the real ending state of one chapter into the next chapter's work.",
+    "instructions": "Write after the chapter is approved. Keep it concise and factual.",
+    "fields": ["Chapter job", "Final words", "Reader/character movement", "Claims/scenes", "Definitions/facts", "Decisions", "Promises", "Open problems", "Next dependency", "Summary"],
+    "example": "The anger chapter must preserve the distinction between feeling anger and choosing action."
+  },
+  {
+    "id": "structural-revision",
+    "title": "Structural Revision Checklist",
+    "badge": "Template",
+    "purpose": "Review the book's promise, sequence, dependencies, middle, and ending before line editing.",
+    "instructions": "Use chapter summaries first. Record moves and deletions before editing prose.",
+    "fields": ["Promise delivered", "Distinct chapter jobs", "Dependencies ordered", "Middle escalates", "Repetition mapped", "Ending completes movement", "Changes approved"],
+    "example": "Chapters 7 and 12 repeat the same definition; Chapter 12 will become an application under pressure."
+  },
+  {
+    "id": "voice-ai-tells",
+    "title": "Voice and AI-Tell Checklist",
+    "badge": "Template",
+    "purpose": "Find model-default rhythm and restore the author's relationship with the reader.",
+    "instructions": "Mark patterns in context. Do not delete mechanically; decide whether each pattern is intentional.",
+    "fields": ["Generic framing", "Repeated list shape", "Inflated transition", "Abstract encouragement", "Unearned certainty", "Symmetry", "Author sample comparison", "Read-aloud result"],
+    "example": "Three consecutive sections end with motivational summary paragraphs; keep one and replace two with forward movement."
+  },
+  {
+    "id": "final-audit",
+    "title": "Final Manuscript Audit",
+    "badge": "Template",
+    "purpose": "Verify content and artifact integrity before publication.",
+    "instructions": "Complete after assembly and again after export.",
+    "fields": ["Metadata", "Contents", "Order", "Cross-references", "Sources", "Permissions", "Scripture policy", "Names/terms", "Join errors", "Headers/footers", "Links", "Backups", "Human reviews"],
+    "example": "All direct Bible quotations match the named translation and required permissions language is present."
+  }
+]
