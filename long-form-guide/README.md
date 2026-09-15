@@ -25,7 +25,28 @@ This directory contains the editable source and deterministic PDF build for
 ## Development checks
 
 ```bash
-python -m unittest discover -s long-form-guide/tests -v
+/Users/adriancruz/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 \
+  -m unittest discover -s long-form-guide/tests -v
 ```
 
-The final build and release commands will be added after the PDF builder is implemented.
+## Build
+
+Run from the repository root:
+
+```bash
+/Users/adriancruz/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 \
+  long-form-guide/build/build_pdf.py
+```
+
+The finished file is written to:
+
+`output/pdf/Writing_a_60000_Word_Book_with_AI.pdf`
+
+## Release record
+
+- Build date: 2026-09-15
+- Format: US Letter PDF
+- Page count: 70
+- Automated checks: 16 passing
+- SHA-256: `3a79850b8317cbd08b4f2af8f4e74f5998f0908aca46de93367a019d2a92bd9e`
+- Editorial and visual QA records: `long-form-guide/qa/`
