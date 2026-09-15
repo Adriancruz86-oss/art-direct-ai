@@ -82,21 +82,21 @@ def worksheet(record: dict[str, Any], styles: dict[str, Any], theme: GuideTheme)
 
 def prompt_card(record: dict[str, Any], styles: dict[str, Any], theme: GuideTheme):
     flow = [badge("Prompt Framework", "Template", styles), Spacer(1, 9)]
-    flow.append(Paragraph(escape(record["title"]), styles["worksheet_title"]))
-    flow.append(Paragraph(f"<b>Stage:</b> {escape(record['stage'])}", styles["body"]))
-    flow.append(Paragraph(f"<b>Inputs:</b> {escape('; '.join(record['inputs']))}", styles["body"]))
-    flow.append(Paragraph(f"<b>The author decides:</b> {escape(record['author_decision'])}", styles["body"]))
-    prompt_box = Table([[Paragraph(escape(record["prompt"]), styles["body"])]], colWidths=[6.5 * inch])
+    flow.append(Paragraph(escape(record["title"]), styles["prompt_title"]))
+    flow.append(Paragraph(f"<b>Stage:</b> {escape(record['stage'])}", styles["small"]))
+    flow.append(Paragraph(f"<b>Inputs:</b> {escape('; '.join(record['inputs']))}", styles["small"]))
+    flow.append(Paragraph(f"<b>The author decides:</b> {escape(record['author_decision'])}", styles["small"]))
+    prompt_box = Table([[Paragraph(escape(record["prompt"]), styles["small"])]], colWidths=[6.5 * inch])
     prompt_box.setStyle(TableStyle([
         ("BACKGROUND", (0, 0), (-1, -1), theme.pale_blue),
         ("BOX", (0, 0), (-1, -1), 0.8, theme.navy),
         ("LEFTPADDING", (0, 0), (-1, -1), 13),
         ("RIGHTPADDING", (0, 0), (-1, -1), 13),
-        ("TOPPADDING", (0, 0), (-1, -1), 12),
-        ("BOTTOMPADDING", (0, 0), (-1, -1), 12),
+        ("TOPPADDING", (0, 0), (-1, -1), 8),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
     ]))
     flow.extend([Spacer(1, 5), prompt_box, Spacer(1, 9)])
-    flow.append(Paragraph(f"<b>Output:</b> {escape(record['output_format'])}", styles["body"]))
-    flow.append(Paragraph(f"<b>The model must not decide:</b> {escape(record['model_must_not_decide'])}", styles["body"]))
-    flow.append(callout("Example use", record["example"], "Exercise", styles, theme))
+    flow.append(Paragraph(f"<b>Output:</b> {escape(record['output_format'])}", styles["small"]))
+    flow.append(Paragraph(f"<b>The model must not decide:</b> {escape(record['model_must_not_decide'])}", styles["small"]))
+    flow.append(Paragraph(f"<b>Example:</b> {escape(record['example'])}", styles["small"]))
     return flow

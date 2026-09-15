@@ -13,6 +13,9 @@ from components import prompt_card, worksheet  # noqa: E402
 from styles import BADGE_COLORS, GuideTheme, make_styles  # noqa: E402
 
 
+OUTPUT_PDF = GUIDE_DIR.parent / "output" / "pdf" / "Writing_a_60000_Word_Book_with_AI.pdf"
+
+
 class ComponentTests(unittest.TestCase):
     def setUp(self):
         self.theme = GuideTheme()
@@ -42,6 +45,21 @@ class ComponentTests(unittest.TestCase):
         }
         flow = prompt_card(record, self.styles, self.theme)
         self.assertGreaterEqual(len(flow), 9)
+
+
+class FinishedPdfTests(unittest.TestCase):
+    def test_finished_pdf_structure(self):
+        from pypdf import PdfReader
+
+        self.assertTrue(OUTPUT_PDF.is_file())
+        self.assertEqual(OUTPUT_PDF.read_bytes()[:4], b"%PDF")
+        reader = PdfReader(str(OUTPUT_PDF))
+        self.assertGreaterEqual(len(reader.pages), 50)
+        self.assertLessEqual(len(reader.pages), 70)
+        self.assertEqual(reader.metadata.title, "Writing a 60,000-Word Book with AI")
+        text = "\n".join((page.extract_text() or "") for page in reader.pages)
+        for required in ["Build the Foundation", "Architect 60,000 Words", "Working Templates", "Prompt Framework Library"]:
+            self.assertIn(required, text)
 
 
 if __name__ == "__main__":

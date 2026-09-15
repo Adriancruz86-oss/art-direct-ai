@@ -22,9 +22,9 @@ class GuideTheme:
     pale_green: colors.Color = colors.HexColor("#E5ECE5")
     pale_rust: colors.Color = colors.HexColor("#F2E2DA")
     pale_blue: colors.Color = colors.HexColor("#E7EDF2")
-    margin_x: float = 0.72 * inch
-    margin_top: float = 0.72 * inch
-    margin_bottom: float = 0.68 * inch
+    margin_x: float = 0.68 * inch
+    margin_top: float = 0.62 * inch
+    margin_bottom: float = 0.62 * inch
 
 
 BADGE_COLORS = {
@@ -42,8 +42,8 @@ def make_styles(theme: GuideTheme) -> dict[str, ParagraphStyle]:
     return {
         "body": ParagraphStyle(
             "GuideBody", parent=sample["BodyText"], fontName="Helvetica",
-            fontSize=10.2, leading=13.4, textColor=theme.charcoal,
-            spaceAfter=7, allowWidows=0, allowOrphans=0,
+            fontSize=10, leading=12.8, textColor=theme.charcoal,
+            spaceAfter=5, allowWidows=0, allowOrphans=0,
         ),
         "small": ParagraphStyle(
             "GuideSmall", parent=sample["BodyText"], fontName="Helvetica",
@@ -56,8 +56,8 @@ def make_styles(theme: GuideTheme) -> dict[str, ParagraphStyle]:
         ),
         "h2": ParagraphStyle(
             "GuideH2", parent=sample["Heading2"], fontName="Times-Bold",
-            fontSize=18, leading=21, textColor=theme.green, spaceBefore=13,
-            spaceAfter=8, keepWithNext=True,
+            fontSize=17, leading=19.5, textColor=theme.green, spaceBefore=10,
+            spaceAfter=6, keepWithNext=True,
         ),
         "h3": ParagraphStyle(
             "GuideH3", parent=sample["Heading3"], fontName="Helvetica-Bold",
@@ -101,6 +101,10 @@ def make_styles(theme: GuideTheme) -> dict[str, ParagraphStyle]:
         "worksheet_title": ParagraphStyle(
             "WorksheetTitle", parent=sample["Heading1"], fontName="Times-Bold",
             fontSize=23, leading=26, textColor=theme.green, spaceAfter=8,
+        ),
+        "prompt_title": ParagraphStyle(
+            "PromptTitle", parent=sample["Heading2"], fontName="Times-Bold",
+            fontSize=15, leading=17, textColor=theme.green, spaceAfter=4,
         ),
         "field": ParagraphStyle(
             "WorksheetField", parent=sample["BodyText"], fontName="Helvetica-Bold",
