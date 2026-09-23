@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Why AI illustrations drift from scene to scene—and the practical art-direction system that makes characters, settings, and style more consistent." />
+  <link rel="canonical" href="https://adriancruz86-oss.github.io/art-direct-ai/stop-regenerating-ai-illustrations.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://adriancruz86-oss.github.io/art-direct-ai/stop-regenerating-ai-illustrations.html" />
+  <meta property="og:title" content="Stop Regenerating: Why Your AI Illustrations Keep Drifting" />
+  <meta property="og:description" content="The fix for inconsistent AI artwork usually isn't a longer prompt. It's a production system." />
+  <meta property="og:image" content="https://adriancruz86-oss.github.io/art-direct-ai/assets/ai-art-director-toolkit-cover.jpg" />
+  <meta property="og:image:alt" content="The AI Art Director Toolkit" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Stop Regenerating: Why Your AI Illustrations Keep Drifting" />
+  <meta name="twitter:description" content="The fix for inconsistent AI artwork usually isn't a longer prompt. It's a production system." />
+  <meta name="twitter:image" content="https://adriancruz86-oss.github.io/art-direct-ai/assets/ai-art-director-toolkit-cover.jpg" />
+  <title>Stop Regenerating: Why Your AI Illustrations Keep Drifting — Art Direct AI</title>
+  <style>
+    :root { --paper:#f5f0e7; --ink:#1d1d19; --muted:#666158; --line:#d6cfc2; --green:#234c3a; --green-soft:#dfe9df; --orange:#c85f35; --panel:#fffdf8; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:Georgia,'Times New Roman',serif; line-height:1.72; }
+    .topbar { display:flex; justify-content:space-between; align-items:center; gap:1rem; max-width:1040px; margin:auto; padding:18px 24px; border-bottom:1px solid var(--line); font-family:Arial,Helvetica,sans-serif; }
+    .brand,.back { color:var(--ink); text-decoration:none; }
+    .brand { font-size:.82rem; font-weight:900; letter-spacing:.09em; }
+    .back { color:var(--muted); font-size:.88rem; }
+    main { max-width:1120px; margin:auto; padding:64px 24px 96px; }
+    .hero { display:grid; grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr); gap:64px; align-items:center; padding-bottom:60px; border-bottom:1px solid var(--line); }
+    .eyebrow,.byline,.toolkit-card small { font-family:Arial,Helvetica,sans-serif; }
+    .eyebrow { color:var(--orange); font-size:.76rem; font-weight:900; letter-spacing:.14em; }
+    h1 { max-width:760px; margin:12px 0 24px; font-size:clamp(2.65rem,6.4vw,5.6rem); line-height:.96; letter-spacing:-.045em; }
+    .dek { max-width:700px; margin:0 0 18px; color:#47433d; font-size:1.25rem; line-height:1.55; }
+    .byline { margin:0; color:var(--muted); font-size:.88rem; }
+    .hero img { width:100%; display:block; border:1px solid var(--line); box-shadow:0 22px 48px rgba(34,31,25,.13); }
+    .article { max-width:760px; margin:0 auto; padding-top:58px; }
+    .article p,.article li { font-size:1.08rem; }
+    .article h2 { margin:56px 0 18px; font-size:clamp(1.9rem,4vw,3rem); line-height:1.08; letter-spacing:-.025em; }
+    .article ul { padding-left:1.25rem; }
+    .article li { margin:.6rem 0; }
+    .pullquote { margin:42px 0; padding:28px 30px; border-left:5px solid var(--orange); background:var(--panel); font-size:1.45rem; font-weight:700; line-height:1.35; }
+    .system { margin:34px 0; padding:26px 28px; background:var(--green-soft); border:1px solid #bdcdbc; }
+    .system strong { color:var(--green); }
+    .toolkit-card { display:grid; grid-template-columns:150px 1fr; gap:28px; align-items:center; margin-top:66px; padding:34px; background:var(--green); color:white; }
+    .toolkit-card img { width:100%; display:block; }
+    .toolkit-card h2 { margin:6px 0 12px; color:white; }
+    .toolkit-card p { margin:0 0 18px; color:#e6eee9; }
+    .toolkit-card small { color:#f4b18f; font-weight:900; letter-spacing:.12em; }
+    .price { display:flex; align-items:baseline; gap:10px; margin-bottom:18px; font-family:Arial,Helvetica,sans-serif; }
+    .price strong { font-size:1.7rem; }
+    .price s { color:#b8cbc0; }
+    .button { display:inline-block; padding:13px 18px; background:#f3c260; color:#171711; text-decoration:none; font-family:Arial,Helvetica,sans-serif; font-weight:900; border-radius:3px; }
+    footer { max-width:760px; margin:0 auto; padding:0 24px 42px; color:var(--muted); text-align:center; font:.78rem Arial,Helvetica,sans-serif; }
+    @media (max-width:760px) { main{padding-top:42px}.hero{grid-template-columns:1fr;gap:34px}.hero img{max-width:390px;margin:auto}.toolkit-card{grid-template-columns:1fr}.toolkit-card img{max-width:180px}.article p,.article li{font-size:1.03rem} }
+  </style>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="./">ART DIRECT AI</a><a class="back" href="./">← Back to the blog</a></header>
+  <main>
+    <header class="hero">
+      <div><p class="eyebrow">AI ILLUSTRATION WORKFLOW</p><h1>Stop Regenerating: Why Your AI Illustrations Keep Drifting</h1><p class="dek">When a character changes face, clothing, or style between scenes, the instinct is to generate again. The better fix is to stop treating every image like a new request.</p><p class="byline">By Adrian Cruz · 8 minute read</p></div>
+      <img src="assets/ai-art-director-toolkit-cover.jpg" alt="The AI Art Director Toolkit cover" />
+    </header>
+    <article class="article">
+      <p>You finally get an image that works. The character looks right. The mood is right. The background is quiet enough for the page. Then you generate the next scene—and suddenly the character has a different face, a new jacket, three extra years of age, and a bedroom that looks like it belongs in another book.</p>
+      <p>So you regenerate. Then regenerate again. You add more adjectives, paste in a longer prompt, and tell the model to keep everything “exactly the same.” Sometimes it gets closer. Often it changes something else.</p>
+      <p>This is the regeneration trap: treating inconsistency as a bad-luck problem instead of a production problem.</p>
+      <div class="pullquote">The fix usually isn't a longer prompt. It's a clearer set of decisions made before the prompt.</div>
+      <h2>Every new prompt invites a new interpretation</h2>
+      <p>An image model is not carrying your book around in its head. It does not automatically understand which details are permanent, which can vary, or why a visual choice matters to the story. Even when you reuse a prompt, vague language leaves room for the model to reinterpret the character, medium, setting, and composition.</p>
+      <p>“Young boy in a blue jacket” sounds specific until you need the same boy in twelve scenes. How old does he look? Is the jacket navy, cobalt, or faded denim? Is it zipped? Does it have a hood? What is his silhouette? Which facial features make him recognizable when the camera moves from close-up to wide shot?</p>
+      <p>If those decisions are not written down, they are not locked. The model fills the gaps with plausible alternatives—and every plausible alternative becomes drift.</p>
+      <h2>Separate what must stay fixed from what may change</h2>
+      <p>A useful character specification is not a paragraph of decoration. It is a small system of constraints. Start by dividing traits into three groups:</p>
+      <ul><li><strong>Must remain:</strong> facial structure, age range, body proportions, core hairstyle, signature clothing colors, and recurring accessories.</li><li><strong>May vary:</strong> expression, pose, jacket position, dirt or weather effects, and scene-appropriate props.</li><li><strong>Never include:</strong> features the model repeatedly invents, such as glossy 3D skin, oversized eyes, elaborate lighting, random jewelry, or extra decorative objects.</li></ul>
+      <p>The same method works for environments and style. A room has permanent anchors: door placement, window shape, furniture, wall color, and the direction of daylight. A style has permanent anchors too: line quality, palette, texture, edge treatment, level of detail, and how faces are rendered.</p>
+      <div class="system"><strong>Think in reusable blocks.</strong> Build a character block, a style block, and an environment block once. Then add only the scene-specific direction for each new image.</div>
+      <h2>Direct the scene before writing the prompt</h2>
+      <p>Many weak generations begin with the prompt because the creator has not decided what the image needs to do. A scene brief forces those decisions first.</p>
+      <p>Before generating, answer a few concrete questions:</p>
+      <ul><li>What is the story beat?</li><li>What should the reader notice first?</li><li>Is this a wide, medium, or close view?</li><li>Where will the text sit?</li><li>Which continuity details must be visible?</li><li>What should be left out?</li></ul>
+      <p>This is where prompting becomes art direction. “A child in a forest” asks for subject matter. “A quiet wide shot with the child low on the right, a simple path leading toward a small red scarf in the distance, and open sky on the upper left for text” gives the image a job.</p>
+      <h2>Diagnose before you regenerate</h2>
+      <p>When an image fails, name the failure before changing the prompt. Is the problem identity, style, composition, continuity, or a technical artifact? Each category needs a different correction.</p>
+      <p>If the composition is good but the expression is wrong, do not rewrite the whole prompt. Preserve the camera, layout, lighting, wardrobe, and environment. Request one change. If the entire image is solving the wrong story problem, then regenerate from a corrected scene brief.</p>
+      <p>This distinction matters because a broad correction often destroys the parts that were already working. “Make it better” is not direction. “Keep the composition and wardrobe unchanged; soften the expression from fear to cautious curiosity” is.</p>
+      <h2>Your chat is not your project archive</h2>
+      <p>Even a strong visual system falls apart when its materials are scattered across chats, downloads, temporary output folders, and filenames like <em>final-final-2.png</em>.</p>
+      <p>Save the approved image with the prompt, reference, and revision notes that produced it. Keep separate folders for the visual bible, scene prompts, raw generations, approved art, edits, and final exports. Use filenames that tell you the scene, version, and status.</p>
+      <p>A simple name such as <em>scene-07-kitchen-v03-approved.png</em> gives future-you more information than a folder full of random image numbers. More importantly, it lets you return to the project months later without rebuilding the process from memory.</p>
+      <h2>The real goal is not perfect consistency</h2>
+      <p>A book should not feel mechanically identical from page to page. Characters move. Light changes. Emotion changes. Quiet scenes and hero moments need different visual weight.</p>
+      <p>The goal is controlled variation: the reader recognizes the same character and world while the images still respond to the story. That requires knowing which choices belong to the identity of the project and which choices belong to the moment.</p>
+      <p>Once you make that distinction, you stop gambling on isolated images. You start building a body of work that can survive revisions, page turns, layout changes, and publication.</p>
+      <section class="toolkit-card" aria-label="The AI Art Director Toolkit">
+        <img src="assets/ai-art-director-toolkit-cover.jpg" alt="The AI Art Director Toolkit" loading="lazy" />
+        <div><small>THE COMPLETE WORKING SYSTEM</small><h2>Stop prompting. Start directing.</h2><p>The AI Art Director Toolkit turns this process into reusable briefs, character and environment bibles, continuity trackers, revision logs, book-layout planners, cover worksheets, and publication checks. It includes the 74-page toolkit and a separate 24-page worksheet pack in PDF and editable Word formats.</p><div class="price"><strong>$9.99 launch price</strong><s>$29.99</s></div><a class="button" href="https://adrianashley.gumroad.com/l/ai-art-director-toolkit?offer_code=LAUNCH999" target="_blank" rel="noopener">See the AI Art Director Toolkit</a></div>
+      </section>
+      <p>Or, if you want to look through the product details first, <a href="https://adrianashley.gumroad.com/l/ai-art-director-toolkit?offer_code=LAUNCH999" target="_blank" rel="noopener">visit the launch page here</a>.</p>
+    </article>
+  </main>
+  <footer>© 2026 Adrian Cruz · Art Direct AI</footer>
+</body>
+</html>
